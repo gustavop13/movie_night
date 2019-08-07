@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 
 function Counter(props) {
   return (
-    <div>
-      <h1>I am a counter!</h1>
+    <div className='boxu'>
       <p>Count: {props.count}</p>
-      <button onClick={props.onIncrementClick}>increment</button>
+      <button onClick={props.onIncrementClick}>Increment</button>
+      <button>Create</button>
+      <button>Join</button>
     </div>
   )
 }

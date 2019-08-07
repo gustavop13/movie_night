@@ -1,3 +1,54 @@
 .App {
   text-align: center;
+  width: 100%;
+  margin: auto;
+  margin-top: 16em;
+  display: inline-flex;
+}
+
+body {
+  background-color: #6a0067;
+  background-size: cover;
+  color: black;
+}
+
+h1 {
+  font-size: 3em;
+  text-align: center;
+}
+
+p {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 2em;
+}
+
+.greeting {
+  color: #e8d915;
+  font-family: 'Lobster', cursive;
+  width: 500px;
+  margin: auto;
+  text-align: left;
+}
+
+.boxu {
+  background: #e8d915;
+  width: fit-content;
+  padding: 1.5em;
+  border-radius: 1.5em;
+  margin: auto;
+  text-align: center;
+}
+
+button {
+  padding: 0;
+  font-weight: bold;
+  font-size: 1.5em;
+  display: block;
+  background-color: #9222a3;
+  border-radius: 3em;
+  margin: auto;
+  margin-top: 1em;
+  height: 3em;
+  width: 8em;
+  border: hidden;
 }
