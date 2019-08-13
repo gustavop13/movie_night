@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Counter from './components/Counter';
 import Welcome from './components/Welcome';
+import MovieList from './components/MovieList';
 import { subscribeToTimer } from './api';
 
 import store from './store/';
@@ -15,7 +16,7 @@ class App extends Component {
   }
 
   state = {
-    timestamp: 'no timestamp yet'
+    movies: ['Batman', 'Avengers', 'Rocketman']
   };
 
   render() {

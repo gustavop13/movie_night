@@ -2,8 +2,9 @@
   text-align: center;
   width: 100%;
   margin: auto;
-  margin-top: 16em;
+  margin-top: 15em;
   display: inline-flex;
+  justify-content: space-evenly;
 }
 
 body {
@@ -26,17 +27,19 @@ p {
   color: #e8d915;
   font-family: 'Lobster', cursive;
   width: 500px;
-  margin: auto;
   text-align: left;
 }
+
 
 .boxu {
   background: #e8d915;
   width: fit-content;
+  height: fit-content;
   padding: 1.5em;
   border-radius: 1.5em;
-  margin: auto;
   text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 button {
@@ -46,9 +49,17 @@ button {
   display: block;
   background-color: #9222a3;
   border-radius: 3em;
-  margin: auto;
-  margin-top: 1em;
   height: 3em;
   width: 8em;
   border: hidden;
+  margin-top: 1em;
+}
+
+.list {
+  background: #e8d915;
+  width: 300px;
+  padding: 1.5em;
+  border-radius: 1.5em;
+  margin: auto;
+  text-align: center;
 }
