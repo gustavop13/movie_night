@@ -1,27 +1,32 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import MovieList from './MovieList';
 
 function Counter(props) {
-  return (
-    <div className='boxu'>
-      <button onClick={props.onCreate}>Create</button>
-      <button onClick={props.onJoin}>Join</button>
-    </div>
-  )
+  if(props.movies.length > 2) {
+    return (
+      <div className='boxu'>
+        <MovieList movies={props.movies}/>
+      </div>
+    )
+  } else {
+    return (
+      <div className='boxu'>
+        <button onClick={props.onCreate}>Create</button>
+        <button onClick={props.onJoin}>Join</button>
+      </div>
+    )
+  }
 }
 
 function mapStateToProps(state) {
   return {
-    count: state.count
+    movies: state.movies
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    onIncrementClick: () => {
-      const action = { type: 'INCREMENT'};
-      dispatch(action);
-    },
     onCreate: () => {
       const action = {type: 'CREATE'};
       dispatch(action);

@@ -5,6 +5,7 @@
   margin-top: 15em;
   display: inline-flex;
   justify-content: space-evenly;
+  overflow: auto;
 }
 
 body {
@@ -40,6 +41,8 @@ p {
   text-align: center;
   margin-top: auto;
   margin-bottom: auto;
+  -ms-transform: translateX(-40%);
+  transform: translateX(-40%);
 }
 
 button {

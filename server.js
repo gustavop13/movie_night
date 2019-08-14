@@ -1,11 +1,14 @@
 const io = require('socket.io')();
 
-io.on('connection', (client) => {
-  client.on('subscribeToTimer', (interval) => {
-    console.log('client is subscribing to timer with interval ', interval);
-    setInterval(() => {
-      client.emit('m', new Date());
-    }, interval);
+let list = [];
+
+io.on('connection', (socket) => {
+  socket.on('postMovie', (movie) => {
+    console.log('created');
+    list.push(movie);
+    socket.emit('movies', {
+      movies: list
+    });
   });
 });
 
