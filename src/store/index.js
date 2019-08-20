@@ -2,7 +2,7 @@ import { createStore } from 'redux';
 import { postMovie } from '../api';
 
 const initialState = {
-  movies: ["bootmen", "avengus"]
+  movies: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -10,9 +10,8 @@ const reducer = (state = initialState, action) => {
     // case 'INCREMENT':
     //   return Object.assign({}, state, { count: state.count + 1});
     case 'CREATE':
-      console.log('created');
-      postMovie();
-      return Object.assign({}, state, { movies: [1, 2, 3] });
+      postMovie("Avengu");
+      return Object.assign({}, state, { movies: state.movies });
     case 'JOIN':
       console.log('joined');
       return state;

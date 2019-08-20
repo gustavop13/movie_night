@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 import MovieList from './MovieList';
 
 function Counter(props) {
-  if(props.movies.length > 2) {
+  if(props.movies.length > 0) {
     return (
       <div className='boxu'>
         <MovieList movies={props.movies}/>
+        <input placeholder='Other Movie'></input>
       </div>
     )
   } else {

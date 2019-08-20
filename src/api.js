@@ -1,7 +1,9 @@
 import openSocket from 'socket.io-client';
 const  socket = openSocket('http://localhost:8000');
 
-function postMovie(cb) {
-  socket.emit('postMovie', ["movieslul"]);
+function postMovie(movie) {
+  socket.on('movies', newMovie => movie);
+  socket.emit('postMovie', movie);
 }
+
 export { postMovie };

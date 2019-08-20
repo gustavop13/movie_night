@@ -6,10 +6,6 @@ import Welcome from './components/Welcome';
 import store from './store/';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="App">

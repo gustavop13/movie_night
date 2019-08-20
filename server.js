@@ -1,14 +1,14 @@
 const io = require('socket.io')();
 
-let list = [];
+let list = ['lul'];
 
 io.on('connection', (socket) => {
   socket.on('postMovie', (movie) => {
-    console.log('created');
     list.push(movie);
     socket.emit('movies', {
       movies: list
     });
+    console.log(list);
   });
 });
 

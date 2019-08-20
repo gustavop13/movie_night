@@ -66,3 +66,17 @@ button {
   margin: auto;
   text-align: center;
 }
+
+input {
+  padding: 0;
+  font-weight: bold;
+  font-size: 1.5em;
+  display: block;
+  background-color: #9222a3;
+  border-radius: 3em;
+  height: 3em;
+  width: 8em;
+  border: hidden;
+  margin-top: 1em;
+  text-align: center;
+}
