@@ -3,12 +3,8 @@ const io = require('socket.io')();
 let list = ['lul'];
 
 io.on('connection', (socket) => {
-  socket.on('postMovie', (movie) => {
+  socket.on('postMovie', function(data, fn) {
     list.push(movie);
-    socket.emit('movies', {
-      movies: list
-    });
-    console.log(list);
   });
 });
 
