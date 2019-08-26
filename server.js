@@ -1,13 +1,15 @@
-const io = require('socket.io')();
-
-let list = ['lul'];
-
-io.on('connection', (socket) => {
-  socket.on('postMovie', function(data, fn) {
-    list.push(movie);
+var http = require('http');
+var server = http.createServer();
+var socket_io = require('socket.io');
+server.listen(8000);
+var io = socket_io();
+io.attach(server);
+io.on('connection', function(socket){
+  console.log("Socket connected: " + socket.id);
+  socket.on('action', (action) => {
+    if(action.type === 'server/hello'){
+      console.log('Got hello data!', action.data);
+      socket.emit('action', {type:'message', data:'good day!'});
+    }
   });
 });
-
-const port = 8000;
-io.listen(port);
-console.log('listening on port ', port);
