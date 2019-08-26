@@ -29,11 +29,11 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     onCreate: () => {
-      const action = {type: 'CREATE'};
+      const action = {type: 'server/CREATE'};
       dispatch(action);
     },
     onJoin: () => {
-      const action = {type: 'JOIN'};
+      const action = {type: 'servr/JOIN'};
       dispatch(action);
     }
   }

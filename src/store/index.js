@@ -12,7 +12,11 @@ const initialState = {
 function reducer(state = initialState, action){
   switch(action.type){
     case 'message':
-      return Object.assign({}, {movies: state.movies, message:action.data});
+      return Object.assign({}, {movies: action.data, message: action.data});
+    case 'CREATE':
+      return Object.assign({}, {movies: action.data, message: action.data});
+    case 'JOIN':
+      return Object.assign({}, {movies: action, message: action.data});
     default:
       return state;
   }
