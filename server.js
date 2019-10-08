@@ -16,10 +16,13 @@ io.on('connection', function(socket){
     if(action.type === 'server/hello'){
       socket.emit('action', {type: 'message', data: movie_list});
     } else if(action.type === 'server/CREATE') {
-      movie_list.push('avengurssss');
+      socket.join('1');
+      movie_list.push(action.data);
       socket.emit('action', {type: 'CREATE', data: movie_list});
     } else if(action.type === 'server/JOIN') {
       socket.emit('action', {type: 'JOIN', data:'good day!'});
+    } else if(action.type === 'server.EXIT') {
+      socket.emit('action', {type: 'EXIT', data: 'exited'});
     }
   });
 });

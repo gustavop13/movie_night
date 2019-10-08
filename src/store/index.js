@@ -17,6 +17,8 @@ function reducer(state = initialState, action){
       return Object.assign({}, {movies: action.data, message: action.data});
     case 'JOIN':
       return Object.assign({}, {movies: action, message: action.data});
+    case 'EXIT':
+      return Object.assign({}, {movies: action.data, message: action.data});
     default:
       return state;
   }
