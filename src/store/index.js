@@ -11,8 +11,6 @@ const initialState = {
 
 function reducer(state = initialState, action){
   switch(action.type){
-    case 'message':
-      return Object.assign({}, {movies: action.data, message: action.data});
     case 'CREATE':
       return Object.assign({}, {movies: action.data, message: action.data});
     case 'JOIN':
@@ -28,7 +26,5 @@ let store = applyMiddleware(socketIoMiddleware)(createStore)(reducer);
 store.subscribe(()=>{
   console.log('new client state', store.getState());
 });
-
-store.dispatch({type:'server/hello', data:'Hello!'});
 
 export default store;

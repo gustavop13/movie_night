@@ -7,8 +7,8 @@ function Counter(props) {
     return (
       <div className='boxu'>
         <MovieList movies={props.movies}/>
-        <button onClick={props.onExit}>Exit</button>
         <input placeholder='Other Movie'></input>
+        <button onClick={props.onExit}>Exit</button>
       </div>
     )
   } else {
@@ -30,7 +30,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     onCreate: () => {
-      const action = {type: 'server/CREATE', data: 'avengurs'};
+      const action = {type: 'server/CREATE'};
       dispatch(action);
     },
     onJoin: () => {
