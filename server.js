@@ -17,9 +17,9 @@ io.on('connection', function(socket){
   socket.on('action', (action) => {
     if(action.type === 'server/CREATE') {
       socket.join('1');
-      socket.emit('action', {type: 'CREATE', data: [movie_map.get("1")]});
+      socket.emit('action', {type: 'CREATE', data: {movies: [movie_map.get("1")]}});
     } else if(action.type === 'server/JOIN') {
-      socket.emit('action', {type: 'JOIN', data:'good day!'});
+      socket.emit('action', {type: 'JOIN', data: []});
     } else if(action.type === 'server/EXIT') {
       socket.emit('action', {type: 'EXIT', data: []});
     }

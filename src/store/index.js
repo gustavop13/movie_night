@@ -6,17 +6,18 @@ let socket = io('http://localhost:8000');
 let socketIoMiddleware = createSocketIoMiddleware(socket, "server/");
 
 const initialState = {
-  movies: []
+  movies: [],
+  joined: false
 }
 
 function reducer(state = initialState, action){
   switch(action.type){
     case 'CREATE':
-      return Object.assign({}, {movies: action.data, message: action.data});
+      return Object.assign({}, {movies: action.data.movies, joined: true});
     case 'JOIN':
-      return Object.assign({}, {movies: action, message: action.data});
+      return Object.assign({}, {movies: action.data, joined: true});
     case 'EXIT':
-      return Object.assign({}, {movies: action.data, message: action.data});
+      return Object.assign({}, {movies: action.data});
     default:
       return state;
   }

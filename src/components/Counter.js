@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import MovieList from './MovieList';
 
 function Counter(props) {
-  if(props.movies.length > 0) {
+  if(props.joined) {
     return (
       <div className='boxu'>
         <MovieList movies={props.movies}/>
@@ -23,7 +23,8 @@ function Counter(props) {
 
 function mapStateToProps(state) {
   return {
-    movies: state.movies
+    movies: state.movies,
+    joined: state.joined
   }
 }
 
