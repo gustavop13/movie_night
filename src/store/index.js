@@ -13,9 +13,9 @@ const initialState = {
 function reducer(state = initialState, action){
   switch(action.type){
     case 'CREATE':
-      return Object.assign({}, {movies: action.data.movies, joined: true});
+      return Object.assign({}, {movies: action.data.movies, joined: action.data.joined});
     case 'JOIN':
-      return Object.assign({}, {movies: action.data, joined: true});
+      return Object.assign({}, {movies: action.data.movies, joined: action.data.joined});
     case 'EXIT':
       return Object.assign({}, {movies: action.data});
     default:
