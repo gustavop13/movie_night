@@ -9,19 +9,20 @@ var io = socket_io();
 io.attach(server);
 
 let movie_map = new Map();
-movie_map.set("1", "Lyfe");
-let movie_list = [];
+movie_map.set('1234', 'MovieName');
 
 io.on('connection', function(socket){
   console.log("Socket connected: " + socket.id);
   socket.on('action', (action) => {
     if(action.type === 'server/CREATE') {
-      socket.join('1');
-      socket.to('1').emit('action', {type: 'CREATE', data: {movies: [movie_map.get("1")], joined: true}});
+      socket.join('1234');
+      io.to('1234').emit('action', {type: 'CREATE', data: {movies: [movie_map.get('1234')], place: 'room', room_number: '1234'}});
     } else if(action.type === 'server/JOIN') {
-      socket.emit('action', {type: 'JOIN', data: {movies: [], joined: true}});
+      socket.join('1234');
+      io.to('1234').emit('action', {type: 'JOIN', data: {movies: [movie_map.get('1234')], place: 'hallway'}});
     } else if(action.type === 'server/EXIT') {
-      socket.emit('action', {type: 'EXIT', data: []});
+      socket.leave();
+      socket.emit('action', {type: 'EXIT'});
     }
   });
 });

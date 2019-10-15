@@ -7,17 +7,18 @@ let socketIoMiddleware = createSocketIoMiddleware(socket, "server/");
 
 const initialState = {
   movies: [],
-  joined: false
+  place: 'lobby',
+  room_number: 0
 }
 
 function reducer(state = initialState, action){
   switch(action.type){
     case 'CREATE':
-      return Object.assign({}, {movies: action.data.movies, joined: action.data.joined});
+      return Object.assign({}, {movies: action.data.movies, place: action.data.place, room_number: action.data.room_number});
     case 'JOIN':
-      return Object.assign({}, {movies: action.data.movies, joined: action.data.joined});
+      return Object.assign({}, {movies: action.data.movies, place: action.data.place});
     case 'EXIT':
-      return Object.assign({}, {movies: action.data});
+      return Object.assign({}, {place: 'lobby'});
     default:
       return state;
   }
