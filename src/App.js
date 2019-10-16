@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Counter from './components/Counter';
+import Lobby from './components/Lobby';
 import Welcome from './components/Welcome';
 
 import store from './store/';
@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <Welcome/>
-        <Counter store={store}/>
+        <Lobby store={store}/>
       </div>
     );
   }

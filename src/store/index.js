@@ -16,9 +16,13 @@ function reducer(state = initialState, action){
     case 'CREATE':
       return Object.assign({}, {movies: action.data.movies, place: action.data.place, room_number: action.data.room_number});
     case 'JOIN':
-      return Object.assign({}, {movies: action.data.movies, place: action.data.place});
+      return Object.assign({}, {movies: action.data.movies, place: action.data.place, room_number: action.data.room_number});
+    case 'JOINING':
+      return Object.assign({}, {place: action.data.place});
     case 'EXIT':
       return Object.assign({}, {place: 'lobby'});
+    case 'ADD':
+      return Object.assign({}, {movies: action.data.movies, place: action.data.place, room_number: action.data.room_number});
     default:
       return state;
   }
