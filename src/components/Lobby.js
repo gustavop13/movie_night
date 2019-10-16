@@ -22,7 +22,7 @@ function Lobby(props) {
     return (
       <div className='boxu'>
         <div>Room Number: {props.room_number}</div>
-        <MovieList movies={props.movies} onAddMovie={props.onAdd}/>
+        <MovieList movies={props.movies} rn={props.room_number} onAddMovie={props.onAdd}/>
         <button onClick={props.onExit}>Exit</button>
       </div>
     )

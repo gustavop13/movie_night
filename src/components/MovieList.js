@@ -14,7 +14,8 @@ class MovieList extends React.Component {
   }
 
   handleSubmit(event) {
-    this.props.onAddMovie(this.props.room_number, this.state.value);
+    this.props.onAddMovie(this.props.rn, this.state.value);
+    this.setState({value: ''});
     event.preventDefault();
   }
 

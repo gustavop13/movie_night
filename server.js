@@ -19,6 +19,7 @@ io.on('connection', function(socket){
       io.to('1234').emit('action', {type: 'CREATE', data: {movies: movie_map.get('1234'), place: 'room', room_number: '1234'}});
     } else if(action.type === 'server/JOIN') {
       socket.join(action.data.rn);
+      movie_map.set(action.data.rn, []);
       io.to(action.data.rn).emit('action', {type: 'JOIN', data: {movies: movie_map.get(action.data.rn), place: 'room', room_number: action.data.rn}});
     } else if(action.type === 'server/JOINING') {
       socket.emit('action', {type: 'JOINING', data: {place: 'hallway'}});
@@ -27,16 +28,11 @@ io.on('connection', function(socket){
       socket.emit('action', {type: 'EXIT'});
     } else if(action.type === 'server/ADD') {
       let movie_list;
-      console.log(action.data.movie_name);
-      if(action.data.rn in movie_map.keys()) {
+      if(movie_map.get(action.data.rn)) {
         movie_list = movie_map.get(action.data.rn);
         movie_list.push(action.data.movie_name);
         movie_map.set(action.data.rn, movie_list);
-        console.log(movie_map);
         io.to(action.data.rn).emit('action', {type: 'ADD', data: {movies: movie_map.get(action.data.rn), place: 'room', room_number: action.data.rn}});
-      } else {
-        movie_list = [];
-        io.to(action.data.rn).emit('action', {type: 'ADD', data: {movies: [], place: 'room', room_number: action.data.rn}});
       }
     }
   });
