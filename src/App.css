@@ -1,11 +1,9 @@
 .App {
   text-align: center;
-  width: 100%;
+  width: fit-content;
   margin: auto;
   margin-top: 15em;
-  display: inline-flex;
-  justify-content: space-evenly;
-  overflow: auto;
+  display: block;
 }
 
 body {
@@ -29,8 +27,10 @@ p {
   font-family: 'Lobster', cursive;
   width: 500px;
   text-align: left;
+  margin: auto;
+  margin-left: 2em;
+  float: left;
 }
-
 
 .boxu {
   background: #e8d915;
@@ -39,10 +39,11 @@ p {
   padding: 1.5em;
   border-radius: 1.5em;
   text-align: center;
-  margin-top: auto;
-  margin-bottom: auto;
-  -ms-transform: translateX(-40%);
-  transform: translateX(-40%);
+  display: block;
+  margin: auto;
+  margin-top: 4em;
+  margin-left: 8em;
+  float: left;
 }
 
 button {
@@ -68,17 +69,8 @@ button {
   height: 2em;
   width: 8em;
   border: hidden;
+  text-align: center;
   margin-top: 1em;
-  text-align: center;
-}
-
-.list {
-  background: #e8d915;
-  width: 300px;
-  padding: 1.5em;
-  border-radius: 1.5em;
-  margin: auto;
-  text-align: center;
 }
 
 input {

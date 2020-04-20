@@ -30,7 +30,7 @@ function reducer(state = initialState, action){
 
 let store = applyMiddleware(socketIoMiddleware)(createStore)(reducer);
 store.subscribe(()=>{
-  console.log('new client state', store.getState());
+  //console.log('new client state', store.getState());
 });
 
 export default store;
