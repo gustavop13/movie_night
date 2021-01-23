@@ -23,8 +23,13 @@ class MovieList extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         {this.props.movies.map((item, index) => (
-          <div key={index} className='movie' onClick={console.log("clicked")}>
-            {item}
+          <div key={index} className='movie'>
+            <div>
+              {item}
+            </div>
+            <div>
+              2
+            </div>
           </div>))}
         <label>
           <input type="text" placeholder='Other Movie' value={this.state.value} onChange={this.handleChange} />

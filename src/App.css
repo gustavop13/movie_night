@@ -2,7 +2,7 @@
   text-align: center;
   width: fit-content;
   margin: auto;
-  margin-top: 15em;
+  margin-top: 10em;
   display: block;
 }
 
@@ -46,6 +46,10 @@ p {
   float: left;
 }
 
+label {
+  width: 100%;
+}
+
 button {
   padding: 0;
   font-weight: bold;
@@ -53,36 +57,49 @@ button {
   display: block;
   background-color: #9222a3;
   border-radius: 3em;
-  height: 3em;
-  width: 8em;
+  height: 2em;
+  width: 7em;
   border: hidden;
   margin-top: 1em;
 }
 
 .movie {
-  padding-top: 0.8em;
   font-weight: bold;
-  font-size: 1.5em;
-  display: block;
+  font-size: calc(1.5em);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: #9222a3;
   border-radius: 3em;
   height: 2em;
-  width: 8em;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 7em;
   border: hidden;
-  text-align: center;
-  margin-top: 1em;
+  text-align: left;
+  overflow: hidden;
 }
 
 input {
   padding: 0;
   font-weight: bold;
   font-size: 1.5em;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #9222a3;
   border-radius: 3em;
-  height: 3em;
-  width: 8em;
+  height: 2em;
+  width: 7em;
   border: hidden;
   margin-top: 1em;
   text-align: center;
+}
+
+form {
+  width: 30em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 1em;
 }
